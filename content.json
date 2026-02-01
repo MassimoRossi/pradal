@@ -1,0 +1,211 @@
+{
+  "opere": [
+    {
+      "id": 2,
+      "title": "Money",
+      "year": "2025",
+      "src": "assets/opere/1.jpg",
+      "size": "100 cm x 30 cm",
+      "technique": "Mista",
+      "infoText": "Banconote al macero"
+    },
+    {
+      "id": 6,
+      "title": "AI Fake",
+      "year": "2024",
+      "src": "assets/opere/AI.jpeg",
+      "size": "40 cm x 130 cm",
+      "technique": "Mista",
+      "infoText": "Una provocazione dell'intelligenza artificiale"
+    },
+    {
+      "id": 5,
+      "title": "Biliardo",
+      "year": "2000",
+      "src": "assets/opere/5.jpg",
+      "size": "20 cm x 160 cm",
+      "technique": "Mista",
+      "infoText": "Un tavolo da biliardo"
+    },
+    {
+      "id": 4,
+      "title": "Visione",
+      "year": "2026",
+      "src": "assets/opere/4.jpg",
+      "size": "35 cm x 75 cm",
+      "technique": "Mista"
+    },
+    {
+      "id": 3,
+      "title": "Canne",
+      "year": "2024",
+      "src": "assets/opere/3.jpg",
+      "size": "30 cm x 60 cm",
+      "technique": "Mista",
+      "infoText": "Canne di Murano"
+    },
+    {
+      "id": 1,
+      "title": "Green",
+      "year": "2025",
+      "src": "assets/opere/2.jpg",
+      "size": "40 cm x 70 cm",
+      "technique": "Mista",
+      "infoText": "Banconote al macero"
+    }
+  ],
+  "eventi": [
+    {
+      "id": 2,
+      "title": "Hotel Danieli",
+      "year": "2025",
+      "src": "assets/eventi/danieli.jpg",
+      "location": "Venezia",
+      "gallery": [
+        "assets/eventi/danieli.jpg",
+        "assets/eventi/danieli2.jpg"
+      ],
+      "infoText": "Esposizione nella hall"
+    },
+    {
+      "id": 1,
+      "title": "Arredamont",
+      "year": "2024",
+      "src": "assets/eventi/arredamont.jpg",
+      "location": "Longarone",
+      "infoText": "Esposizione di opera AI"
+    }
+  ],
+  "media": [
+    {
+      "id": 4,
+      "title": "San Donà – Venezia, l’opera di Valerio Pradal esposta all’Hotel Danieli",
+      "year": "2024",
+      "source": "Veneto Orientale Informazione",
+      "date": "24 agosto 2024",
+      "link": "https://voitg.net/2024/08/san-dona-venezia-lopera-di-valerio-pradal-esposta-allhotel-danieli",
+      "type": "article"
+    },
+    {
+      "id": 7,
+      "title": "Quando il Francobollo si fa Arte - TG Plus CICLISMO",
+      "year": "2024",
+      "source": "To Be Plus Edizioni",
+      "date": "20 giugno 2024",
+      "link": "https://www.youtube.com/watch?v=PLKHQzlZo1E",
+      "type": "video"
+    },
+    {
+      "id": 8,
+      "title": "Valerio Pradal, il maestro veneto dei francobolli",
+      "year": "2024",
+      "source": "TGR Veneto",
+      "date": "4 giugno 2024",
+      "link": "https://www.rainews.it/tgr/veneto/video/2024/06/valerio-pradal-il-maestro-veneto-dei-francobolli-52155c4e-07a3-4e13-a9fb-70468cbe75cb.html",
+      "type": "article"
+    },
+    {
+      "id": 2,
+      "title": "L'arte dei francobolli a Villa Quaglia (TV)",
+      "year": "2024",
+      "source": "TG Plus",
+      "date": "4 giugno 2024",
+      "link": "https://www.youtube.com/watch?v=jyBtcBJrn6o",
+      "type": "video",
+      "info": "Intervista a Villa Quaglia"
+    },
+    {
+      "id": 6,
+      "title": "Presentazione del francobollo Natale 2021 . Autore Valerio Pradal. Intervento di Fabio Cavallari",
+      "year": "2021",
+      "source": "Fabio Cavallari",
+      "date": "10 dicembre 2021",
+      "link": "https://www.youtube.com/watch?v=Pi7DCSIEzhQ",
+      "type": "video"
+    },
+    {
+      "id": 9,
+      "title": "Valerio Pradal, l’uomo dei francobolli",
+      "year": "2021",
+      "source": "Tribuna Politica Web",
+      "date": "24 giugno 2021",
+      "link": "https://news.tribunapoliticaweb.sm/politica/2021/06/24/valerio-pradal-luomo-dei-francobolli/",
+      "type": "article"
+    },
+    {
+      "id": 1,
+      "title": "L'uomo che disegna i francobolli. La storia di Valerio Pradal, figlio del mugnaio con una grande passione",
+      "year": "2021",
+      "source": "Il Gazzettino",
+      "date": "31 maggio 2021",
+      "link": "https://www.ilgazzettino.it/nordest/venezia/francobolli_disegni_valerio_pradal_chi_e-5993581.html",
+      "type": "article",
+      "info": "Articolo di Edoardo Pittalis"
+    },
+    {
+      "id": 5,
+      "title": "VOCI DA ...... Intervista a VALERIO PRADAL Architetto Pubblicitario",
+      "year": "2000",
+      "source": "Venetoglobe IPTV",
+      "date": "6 aprile 2020",
+      "link": "https://www.youtube.com/watch?v=ccZ8qaQSSN8",
+      "type": "video"
+    },
+    {
+      "id": 3,
+      "title": "L’architetto Valerio Pradal, curatore per la Repubblica di San Marino alla 54° Biennale d’arte contemporanea di Venezia",
+      "year": "2011",
+      "source": "Giornalesm.com",
+      "date": "17 maggio 2011",
+      "link": "https://giornalesm.com/larchitetto-valerio-prada-curatore-per-la-repubblica-di-san-marino-alla-54-biennale-darte-contemporanea-di-venezia/",
+      "type": "article"
+    }
+  ],
+  "francobolli": [
+    {
+      "id": 1,
+      "title": "Ostia",
+      "year": "1800",
+      "src": "assets/francobolli/2.jpeg",
+      "issuedBy": "Poste Italiane",
+      "description": "Castello di Ostia"
+    }
+  ],
+  "grandi-eventi": [],
+  "design-brand": [
+    {
+      "id": 1,
+      "title": "Logo Mondiali ciclismo",
+      "year": "1850",
+      "src": "assets/design-brand/logo.jpg",
+      "infoText": "Logo per i mondiali di ciclismo"
+    }
+  ],
+  "campagne-sociali": [
+    {
+      "id": 1,
+      "title": "Campagna ULSS10",
+      "year": "2000",
+      "src": "assets/campagne-sociali/1.jpeg",
+      "infoText": "poster per la campagna sangue occulto"
+    }
+  ],
+  "settings": {
+    "previewPassword": "pradal2026"
+  },
+  "anteprima": [
+    {
+      "id": 2,
+      "title": "QR-CODE",
+      "year": "2026",
+      "src": "assets/anteprima/anteprima.JPG",
+      "infoText": "Sei invitato all'inaugurazione della mostra \"VISIONI INTERATTIVE in cui verrà esposta la mia opera QR-CODE : attraverso un gigantesco qr-code potrai navigare tra i francobolli che hanno fatto la Storia della filatelia, tutti firmati dallo straordinario artista Valerio Pradal"
+    }
+  ],
+  "landing": {
+    "type": "image",
+    "imageSrc": "assets/landing/1.jpg",
+    "quote": "Ogni spazio bianco può diventare Storia",
+    "author": ""
+  }
+}

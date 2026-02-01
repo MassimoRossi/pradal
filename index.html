@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artista Polyhedral | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="layout">
+        <header id="main-header"></header>
+        <main id="app"></main>
+        <footer id="main-footer"></footer>
+    </div>
+
+    <!-- Lightbox Container -->
+    <div id="lightbox" class="lightbox hidden"></div>
+
+    <!-- SCRIPTS: Order is important for dependencies -->
+    <!-- EmailJS SDK for email sending -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- 1. Initialization Namespace -->
+    <script src="js/init.js"></script>
+
+    <!-- 2. Data -->
+    <script src="js/data.js"></script>
+
+    <!-- 3. Components -->
+    <script src="js/components/Header.js"></script>
+    <script src="js/components/GridGallery.js"></script>
+    <script src="js/components/MediaList.js"></script>
+    <script src="js/components/Lightbox.js"></script>
+
+    <!-- 4. Pages -->
+    <script src="js/pages/Landing.js"></script>
+    <script src="js/pages/Opere.js"></script>
+    <script src="js/pages/Eventi.js"></script>
+    <script src="js/pages/Bio.js"></script>
+    <script src="js/pages/Contact.js"></script>
+    <script src="js/pages/Anteprima.js"></script>
+
+    <!-- 5. Core Infrastructure -->
+    <script src="js/router.js"></script>
+
+    <!-- 6. Main Entry Point -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

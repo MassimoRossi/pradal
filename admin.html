@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 Pannello Amministrativo - Sito Valerio Pradal</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <div class="admin-container">
+        <!-- Header -->
+        <header class="admin-header">
+            <h1>🎨 Pannello Amministrativo</h1>
+            <p>Gestisci i contenuti del sito senza modificare codice</p>
+            <div class="admin-actions">
+                <button id="exportBtn" class="btn btn-secondary">💾 Esporta Backup</button>
+                <button id="importBtn" class="btn btn-secondary">📥 Importa Backup</button>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+                <a href="index.html" class="btn btn-primary">👁️ Visualizza Sito</a>
+            </div>
+        </header>
+
+        <!-- Category Selector -->
+        <section class="category-section">
+            <label for="categorySelect">Seleziona Categoria:</label>
+            <select id="categorySelect">
+                <option value="opere">🖼️ Opere</option>
+                <option value="eventi">📅 Eventi</option>
+                <option value="media">📰 Media (Stampa & Video)</option>
+                <option value="francobolli">📮 Francobolli d'autore</option>
+                <option value="grandi-eventi">🎪 Grandi Eventi</option>
+                <option value="design-brand">✏️ Design & Brand</option>
+                <option value="campagne-sociali">❤️ Campagne Sociali</option>
+                <option value="anteprima">🔒 Anteprima (Privata)</option>
+                <option value="landing">🏠 Landing Page</option>
+            </select>
+        </section>
+
+        <!-- Preview Settings Section (Password) -->
+        <div id="previewSettingsSection" class="settings-section" style="display: none;">
+            <h2>⚙️ Impostazioni Anteprima</h2>
+            <div class="form-group inline-form">
+                <label for="previewPassword">Password Accesso:</label>
+                <input type="text" id="previewPassword" placeholder="es: segreto2026">
+                <button type="button" id="savePasswordBtn" class="btn btn-secondary">💾 Aggiorna Password</button>
+            </div>
+            <p class="help-text">Questa password verrà richiesta per accedere alla pagina "Anteprima".</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="admin-content">
+            <!-- Form Section -->
+            <section class="form-section">
+                <h2 id="formTitle">Aggiungi Nuova Opera</h2>
+
+                <form id="contentForm">
+                    <input type="hidden" id="itemId">
+                    <input type="hidden" id="editMode" value="false">
+
+                    <!-- Titolo -->
+                    <div class="form-group">
+                        <label for="itemTitle">Titolo *</label>
+                        <input type="text" id="itemTitle" required>
+                    </div>
+
+                    <!-- Anno -->
+                    <div class="form-group">
+                        <label for="itemYear">Anno *</label>
+                        <input type="text" id="itemYear" placeholder="es: 2024" required>
+                    </div>
+
+                    <!-- Campi specifici per Opere -->
+                    <div class="conditional-fields opere-fields">
+                        <div class="form-group">
+                            <label for="itemSize">Dimensioni</label>
+                            <input type="text" id="itemSize" placeholder="es: 100x120cm">
+                        </div>
+                        <div class="form-group">
+                            <label for="itemTechnique">Tecnica</label>
+                            <input type="text" id="itemTechnique" placeholder="es: Olio su tela">
+                        </div>
+                    </div>
+
+                    <!-- Campi specifici per Eventi -->
+                    <div class="conditional-fields eventi-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="itemLocation">Luogo</label>
+                            <input type="text" id="itemLocation" placeholder="es: Galleria Nazionale">
+                        </div>
+                    </div>
+
+                    <!-- Campi specifici per Francobolli -->
+                    <div class="conditional-fields francobolli-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="itemIssuedBy">Emessa da</label>
+                            <input type="text" id="itemIssuedBy" placeholder="es: Poste Italiane">
+                        </div>
+                    </div>
+
+                    <!-- Campi specifici per Landing Page -->
+                    <div class="conditional-fields landing-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="landingType">Tipo di Visualizzazione</label>
+                            <select id="landingType">
+                                <option value="image">Immagine Sfondo</option>
+                                <option value="quote">Citazione</option>
+                            </select>
+                        </div>
+                        <div class="form-group landing-quote-fields">
+                            <label for="itemQuote">Testo Citazione</label>
+                            <textarea id="itemQuote" rows="3" placeholder="Insersci la citazione..."></textarea>
+                        </div>
+                        <div class="form-group landing-quote-fields">
+                            <label for="itemAuthor">Autore Citazione</label>
+                            <input type="text" id="itemAuthor" placeholder="es: Valerio Pradal">
+                        </div>
+                    </div>
+
+                    <!-- Fonte e Data (per Media) -->
+                    <div class="conditional-fields media-fields" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group flex-2">
+                                <label for="itemSource">Fonte *</label>
+                                <input type="text" id="itemSource" placeholder="es: ArtTribune, RAI 3">
+                            </div>
+                            <div class="form-group flex-1">
+                                <label for="itemDate">Data Media</label>
+                                <input type="text" id="itemDate" placeholder="es: 12 Gen 2025">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemLink">Link / Leggi qui</label>
+                            <div class="input-with-picker">
+                                <input type="url" id="itemLink"
+                                    placeholder="es: https://... oppure assets/media/video.mp4">
+                                <button type="button" class="btn-picker"
+                                    onclick="document.getElementById('linkFilePicker').click()"
+                                    title="Seleziona file locale">📂</button>
+                                <input type="file" id="linkFilePicker" style="display: none;">
+                            </div>
+                            <small class="help-text">Link esterno (articolo) o percorso video locale</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemType">Tipo</label>
+                            <select id="itemType">
+                                <option value="article">Articolo</option>
+                                <option value="video">Video</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Immagine Principale (nascosta per Media) -->
+                    <div class="form-group" id="imageSrcField">
+                        <label for="itemSrc">Immagine Principale <span id="srcRequired">*</span></label>
+                        <div class="input-with-picker">
+                            <input type="text" id="itemSrc" placeholder="es: assets/opere/immagine.jpg">
+                            <button type="button" class="btn-picker"
+                                onclick="document.getElementById('srcFilePicker').click()"
+                                title="Seleziona immagine locale">📂</button>
+                            <input type="file" id="srcFilePicker" accept="image/*" style="display: none;">
+                        </div>
+                        <small class="help-text">
+                            📁 Copiare prima l'immagine nella cartella corrispondente in assets/, poi caricarla qui per
+                            ottenere il percorso
+                        </small>
+                    </div>
+
+                    <!-- Galleria Carosello (nascosta per Media) -->
+                    <div id="gallerySection">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="enableGallery">
+                                Abilita Galleria Carosello (più immagini)
+                            </label>
+                        </div>
+
+                        <div id="galleryInputs" style="display: none;">
+                            <div class="gallery-container">
+                                <div class="gallery-list" id="galleryList"></div>
+                                <button type="button" id="addGalleryItem" class="btn btn-small">+ Aggiungi
+                                    Immagine</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Descrizione -->
+                    <div class="form-group">
+                        <label for="itemDescription">Descrizione (opzionale)</label>
+                        <textarea id="itemDescription" rows="4"
+                            placeholder="Descrizione dettagliata dell'opera/evento..."></textarea>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="saveBtn">💾 Salva</button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn">❌ Annulla</button>
+                    </div>
+
+                    <div id="formFeedback" class="form-feedback"></div>
+                </form>
+            </section>
+
+            <!-- List Section -->
+            <section class="list-section">
+                <div class="list-header">
+                    <h2 id="listTitle">Opere Esistenti</h2>
+                    <button id="addNewBtn" class="btn btn-primary">+ Aggiungi Nuovo</button>
+                </div>
+
+                <div id="itemsList" class="items-list">
+                    <!-- Items will be populated here -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
