@@ -203,9 +203,9 @@
     }
   ],
   "landing": {
-    "type": "image",
+    "type": "quote",
     "imageSrc": "assets/landing/1.jpg",
-    "quote": "Ogni spazio bianco può diventare Storia",
+    "quote": "Ogni spazio bianco può diventare un'opera d'arte",
     "author": ""
   }
 }
