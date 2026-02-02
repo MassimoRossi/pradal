@@ -385,7 +385,7 @@ img {
 }
 
 .bio-nav-card {
-    background: var(--card-bg);
+    background: transparent;
     padding: 1rem 1.5rem;
     text-align: center;
     border: 1px solid #333;
