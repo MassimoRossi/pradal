@@ -133,14 +133,22 @@
                         <div class="form-group">
                             <label for="itemLink">Link / Leggi qui</label>
                             <div class="input-with-picker">
-                                <input type="url" id="itemLink"
-                                    placeholder="es: https://... oppure assets/media/video.mp4">
+
+                              <!--  <input type="url" id="itemLink" -->
+                              <!--      placeholder="es: https://... oppure assets/media/video.mp4"> -->
+                                    
+                              <input type="text" id="itemLink"
+  placeholder="es: https://... oppure assets/media/video.mp4"
+  inputmode="url">
+
+
+
                                 <button type="button" class="btn-picker"
                                     onclick="document.getElementById('linkFilePicker').click()"
                                     title="Seleziona file locale">📂</button>
                                 <input type="file" id="linkFilePicker" style="display: none;">
                             </div>
-                            <small class="help-text">Link esterno (articolo) o percorso video locale</small>
+                            <small class="help-text">Link esterno (articolo, video) o percorso locale</small>
                         </div>
                         <div class="form-group">
                             <label for="itemType">Tipo</label>
