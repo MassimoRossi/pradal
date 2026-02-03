@@ -762,6 +762,7 @@ img {
 
     .direct-item-image {
         max-height: 60vh;
+        margin-bottom: 0.75rem;
     }
 
     .direct-item-image img {
