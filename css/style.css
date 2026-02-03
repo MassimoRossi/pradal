@@ -2,15 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-    --bg-color: #f0f0f0;
-    /* Silver / Light Grey */
-    --text-color: #222222;
-    /* Antracite / Near Black */
-    --accent-color: #b8860b;
-    /* Deep Gold / Bronze */
-    --card-bg: #ffffff;
-    /* pure white cards */
-    --border-color: #dddddd;
+    --bg-color: #e9e9ea;          /* Silver più “materiale” */
+    --text-color: #141414;        /* Nero morbido */
+    --accent-color: #c2a35c;      /* Oro brunito (meno giallo) */
+    --card-bg: #ffffff;           /* Bianco pannelli */
+    --border-color: rgba(0, 0, 0, 0.22); /* Bordi coerenti */
+    --muted-text: #6f6f6f;        /* Testi secondari */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Outfit', sans-serif;
     --container-padding: 5%;
@@ -24,6 +21,8 @@
 }
 
 body {
+    background: var(--bg-color);
+
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-body);
@@ -139,7 +138,7 @@ img {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #ffffff;
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
     min-width: 220px;
     display: none;
@@ -388,22 +387,22 @@ img {
     background: transparent;
     padding: 1rem 1.5rem;
     text-align: center;
-    border: 1px solid #333;
-    transition: 0.3s;
+    border: 1px solid var(--border-color);
+    transition: 0.25s;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
     min-width: 180px;
-    /* Larghezza minima uniforme su desktop */
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--text-color);
 }
 
 .bio-nav-card:hover {
-    background: var(--accent-color);
-    color: #000;
-    border-color: var(--accent-color);
+    background: transparent;              /* niente “riempimento” */
+    color: var(--accent-color);           /* firma oro */
+    border-color: var(--accent-color);    /* bordo oro */
 }
 
 .bio-nav-card h3 {
@@ -1244,7 +1243,7 @@ img {
 
 .direct-divider {
     border: none;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
     margin: 5rem auto;
     width: 100px;
 }
