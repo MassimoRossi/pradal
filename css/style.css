@@ -777,9 +777,11 @@ img {
     }
 
     .direct-item-content {
-        align-self: stretch;
-        max-width: none;
-        margin-top: 2rem;
+        align-self: center;
+    width: 100%;
+    max-width: 520px;
+    margin: 1rem auto 0;   /* centrato + meno stacco */
+    box-sizing: border-box;
     }
 }
 
