@@ -6,7 +6,8 @@ window.SP.Pages.renderContact = async function () {
     section.innerHTML = `
         <h2 class="section-title">Contatti</h2>
         <div class="contact-layout">
-            <div class="contact-info">
+           
+        <div class="contact-info">
                 <p>Per informazioni, acquisti o collaborazioni:</p>
                 <ul>
                     <li>&nbsp;</li>
@@ -15,7 +16,14 @@ window.SP.Pages.renderContact = async function () {
                     <!-- <li><strong>Telefono:</strong> +39 333 1234567</li> -->
                     <!-- <li><strong>Studio:</strong> Via dell'Arte 1, Roma</li> -->
                 </ul>
-            </div>
+           
+                <img
+        src="assets/contatti/vp.jpg"
+        alt="Valerio Pradal"
+        class="contact-image"
+    >
+                </div>
+           
             <form class="contact-form" id="contactForm">
                 <div class="form-group">
                     <label for="name">Nome</label>
