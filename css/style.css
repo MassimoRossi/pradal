@@ -446,7 +446,7 @@ img {
     display: flex;
     gap: 1.5rem;
     padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--accent-color);
 }
 
 .media-icon {
