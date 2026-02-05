@@ -10,22 +10,31 @@ window.SP.Components.Header = function () {
         <div class="logo">
             <a href="#/">${title}</a>
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#/opere">Opere</a></li>
-                <li><a href="#/eventi">Eventi</a></li>
-                <li class="has-dropdown">
-                    <a href="#/bio">Bio</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/bio">Biografia</a></li>
-                        ${(appData.bio?.sections || []).map(sec => `
-                            <li><a href="#/bio/${sec.id}">${sec.title}</a></li>
-                        `).join('')}
-                    </ul>
-                </li>
-                <li><a href="#/contatti">Contatti</a></li>
-            </ul>
-        </nav>
+       
+        <div class="nav-drawer">
+    <button class="nav-trigger" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+    </button>
+<div class="nav-hover-bridge"></div>
+
+    <nav class="nav-panel" aria-label="Menu principale">
+        <ul>
+            <li><a href="#/opere">Opere</a></li>
+            <li><a href="#/eventi">Eventi</a></li>
+            <li class="has-dropdown">
+                <a href="#/bio">Bio</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/bio">Biografia</a></li>
+                    ${(appData.bio?.sections || []).map(sec => `
+                        <li><a href="#/bio/${sec.id}">${sec.title}</a></li>
+                    `).join('')}
+                </ul>
+            </li>
+            <li><a href="#/contatti">Contatti</a></li>
+        </ul>
+    </nav>
+</div>
+
         <div class="mobile-menu-toggle" id="menu-toggle">
             <span></span>
             <span></span>
@@ -53,8 +62,9 @@ window.SP.Components.Header = function () {
         }
 
         // Per tutti gli altri link, chiudi il menu
-        nav.classList.remove('active');
-        toggle.classList.remove('active');
+        if (nav) nav.classList.remove('active');
+        if (toggle) toggle.classList.remove('active');
+
 
         // Force focus removal to close dropdowns triggered by :focus-within on desktop
         if (document.activeElement instanceof HTMLElement) {
@@ -62,13 +72,17 @@ window.SP.Components.Header = function () {
         }
     });
 
-    // Mobile toggle logic
-    const toggle = header.querySelector('#menu-toggle');
-    const nav = header.querySelector('.main-nav');
+   // Mobile toggle logic (safe)
+const toggle = header.querySelector('#menu-toggle');
+const nav = header.querySelector('.main-nav');
+
+if (toggle && nav) {
     toggle.addEventListener('click', () => {
         toggle.classList.toggle('active');
         nav.classList.toggle('active');
     });
+}
+
 
     return header;
 };
