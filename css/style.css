@@ -175,8 +175,8 @@ img {
   box-shadow: none;
 
   margin-left: 1.2rem;            /* rientro gerarchico */
-  margin-top: 0.5rem;
-  padding: 0.5rem 0;              /* padding verticale; il rientro lo fa il margin-left */
+  margin-top: 0;
+  padding: 0;              /* padding verticale; il rientro lo fa il margin-left */
 
   /* animazione */
   max-height: 0;
@@ -194,6 +194,9 @@ img {
   opacity: 1;
   transform: translateX(0);
   pointer-events: auto;
+
+  margin-top: 0.5rem;          /* <-- spaziatura solo quando aperto */
+  padding: 0.5rem 0 0.5rem 0;  /* <-- spaziatura solo quando aperto */
 }
 
 /* Stile link del sottomenu nel drawer */
