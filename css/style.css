@@ -197,8 +197,9 @@ img {
     transition: max-height 280ms ease, opacity 200ms ease, transform 280ms ease;
 }
 
-/* Si apre SOLO con hover su "Bio" (drawer) */
-.nav-panel .has-dropdown:hover>.dropdown-menu {
+/* Si apre SOLO con hover su "Bio" (drawer) O con classe .open (mobile click) */
+.nav-panel .has-dropdown:hover>.dropdown-menu,
+.nav-panel .has-dropdown.open>.dropdown-menu {
     max-height: 360px;
     /* deve essere > altezza reale del sottomenu */
     opacity: 1;
