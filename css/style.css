@@ -1267,6 +1267,86 @@ img {
 }
 
 
+
+/* Icona 3 linee (oro) - GLOBALE PER MOBILE E DESKTOP */
+.nav-trigger {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s;
+    /* Ensure z-index is high enough if needed, though parent handles it */
+    position: relative;
+    z-index: 3001;
+}
+
+.nav-trigger span {
+    height: 2px;
+    width: 100%;
+    background: var(--accent-color);
+    opacity: 0.85;
+    /* più visibili */
+    display: block;
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* Hover: micro-movimento raffinato */
+.nav-trigger:hover span:nth-child(1) {
+    transform: translateX(-4px);
+}
+
+.nav-trigger:hover span:nth-child(2) {
+    transform: translateX(-2px);
+}
+
+.nav-trigger:hover span:nth-child(3) {
+    transform: translateX(0);
+}
+
+.nav-trigger:hover span {
+    opacity: 1;
+}
+
+
+/* “raffinato”: linee scalari */
+.nav-trigger span:nth-child(2) {
+    width: 82%;
+}
+
+.nav-trigger span:nth-child(3) {
+    width: 64%;
+}
+
+.nav-trigger:hover {
+    border-color: var(--accent-color);
+}
+
+.nav-trigger.open {
+    border-color: var(--accent-color);
+}
+
+.nav-trigger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-trigger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-trigger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    width: 100%;
+}
+
 /* STEP 1 — disattiva il VECCHIO menu mobile (main-nav + mobile-menu-toggle) */
 @media (max-width: 768px) {
 
@@ -1281,17 +1361,17 @@ img {
 
     /* header in riga (override definitivo) */
     .header-inner {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 0;
+        gap: 1rem;
         padding-top: 1.2rem;
         padding-bottom: 1.2rem;
     }
 
     /* contenitore del trigger a destra */
     .nav-drawer {
-        margin-left: auto;
+        margin-left: 0;
         position: relative;
         z-index: 3000;
     }
@@ -1484,84 +1564,7 @@ img {
 
 
 
-    /* Icona 3 linee (oro) - GLOBALE PER MOBILE E DESKTOP */
-    .nav-trigger {
-        width: 46px;
-        height: 46px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 6px;
-        padding: 12px;
 
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        transition: 0.25s;
-        /* Ensure z-index is high enough if needed, though parent handles it */
-        position: relative;
-        z-index: 3001;
-    }
-
-    .nav-trigger span {
-        height: 2px;
-        width: 100%;
-        background: var(--accent-color);
-        opacity: 0.85;
-        /* più visibili */
-        display: block;
-        transition:
-            transform 0.25s ease,
-            opacity 0.25s ease;
-    }
-
-    /* Hover: micro-movimento raffinato */
-    .nav-trigger:hover span:nth-child(1) {
-        transform: translateX(-4px);
-    }
-
-    .nav-trigger:hover span:nth-child(2) {
-        transform: translateX(-2px);
-    }
-
-    .nav-trigger:hover span:nth-child(3) {
-        transform: translateX(0);
-    }
-
-    .nav-trigger:hover span {
-        opacity: 1;
-    }
-
-
-    /* “raffinato”: linee scalari */
-    .nav-trigger span:nth-child(2) {
-        width: 82%;
-    }
-
-    .nav-trigger span:nth-child(3) {
-        width: 64%;
-    }
-
-    .nav-trigger:hover {
-        border-color: var(--accent-color);
-    }
-
-    .nav-trigger.open {
-        border-color: var(--accent-color);
-    }
-
-    .nav-trigger.open span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .nav-trigger.open span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-trigger.open span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-        width: 100%;
-    }
 
 
     /* Icona 3 linee (oro) */
