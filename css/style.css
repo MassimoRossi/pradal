@@ -1411,15 +1411,7 @@ img {
         transform: translateX(-50%) translateY(0);
     }
 
-    /* su mobile DISABILITA hover automatico */
-    .nav-drawer:hover .nav-panel,
-    .nav-drawer:focus-within .nav-panel,
-    .nav-panel:hover,
-    .nav-hover-bridge:hover {
-        transform: translateX(-50%) translateY(-6px);
-        opacity: 0;
-        pointer-events: none;
-    }
+
 
     /* layout voci */
     .nav-panel ul {
