@@ -35,11 +35,7 @@ window.SP.Components.Header = function () {
     </nav>
 </div>
 
-        <div class="mobile-menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+ 
     `;
 
     // Close menu on link click or toggle dropdown on mobile
@@ -47,8 +43,9 @@ window.SP.Components.Header = function () {
         const link = e.target.closest('a');
         if (!link) return;
 
-        const nav = header.querySelector('.main-nav');
-        const toggle = header.querySelector('.mobile-menu-toggle');
+        const nav = header.querySelector('.nav-panel');
+        const toggleBtn = header.querySelector('.nav-trigger');
+
         const isMobile = window.innerWidth <= 768;
         const listItem = link.parentElement;
         const hasDropdown = listItem.classList.contains('has-dropdown');
@@ -62,8 +59,9 @@ window.SP.Components.Header = function () {
         }
 
         // Per tutti gli altri link, chiudi il menu
-        if (nav) nav.classList.remove('active');
-        if (toggle) toggle.classList.remove('active');
+        if (nav) nav.classList.remove('open');
+        if (toggleBtn) toggleBtn.classList.remove('open');
+
 
 
         // Force focus removal to close dropdowns triggered by :focus-within on desktop
@@ -72,16 +70,21 @@ window.SP.Components.Header = function () {
         }
     });
 
-   // Mobile toggle logic (safe)
-const toggle = header.querySelector('#menu-toggle');
-const nav = header.querySelector('.main-nav');
+    const trigger = header.querySelector('.nav-trigger');
+    const panel = header.querySelector('.nav-panel');
 
-if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active');
-        nav.classList.toggle('active');
-    });
+if (trigger && panel) {
+  // Stato iniziale: chiuso
+  trigger.classList.remove('open');
+  panel.classList.remove('open');
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    trigger.classList.toggle('open');
+    panel.classList.toggle('open');
+  });
 }
+
 
 
     return header;
