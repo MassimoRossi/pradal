@@ -1384,12 +1384,12 @@ img {
         right: auto;
         width: min(90vw, 320px);
 
-        background: rgba(10, 10, 10, 0.72);
+        background: rgba(245, 245, 245, 0.96);
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
 
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
         padding: 18px 18px;
 
         /* chiuso */
@@ -1422,16 +1422,28 @@ img {
     }
 
     .nav-panel a {
-        color: #fff;
+        color: var(--text-color);
         text-transform: uppercase;
         letter-spacing: 1px;
         opacity: 0.85;
     }
 
+
     .nav-panel a:hover,
     .nav-panel a.active {
         opacity: 1;
         color: var(--accent-color);
+    }
+
+    /* FIX: allinea BIO alle altre voci nel drawer */
+    .nav-panel .has-dropdown {
+        width: auto;
+        text-align: left;
+        padding-right: 0;
+    }
+
+    .nav-panel .has-dropdown>a::after {
+        display: none;
     }
 }
 
@@ -1635,18 +1647,7 @@ img {
         color: var(--accent-color);
     }
 
-    /* FIX: allinea BIO alle altre voci nel drawer */
-    .nav-panel .has-dropdown {
-        padding-right: 0;
-        /* annulla offset del menu desktop classico */
-        width: auto;
-        text-align: left;
-    }
 
-    .nav-panel .has-dropdown>a::after {
-        display: none;
-        /* rimuove la freccetta ▾ che spostava BIO */
-    }
 
 
 
