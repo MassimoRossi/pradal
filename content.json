@@ -56,6 +56,19 @@
   ],
   "eventi": [
     {
+      "id": 3,
+      "title": "L'arte per lo sport",
+      "year": "2026",
+      "src": "assets/eventi/eventitv.jpg",
+      "location": "Barchessa Villa Quaglia - Treviso",
+      "gallery": [
+        "assets/eventi/eventitv1.jpg",
+        "assets/eventi/eventitv2.jpg",
+        "assets/eventi/eventitv3.jpg"
+      ],
+      "infoText": "Partecipazione a una mostra collettiva in Villa Quaglia a Treviso sul rapporto tra arte e sport."
+    },
+    {
       "id": 2,
       "title": "Hotel Danieli",
       "year": "2025",
