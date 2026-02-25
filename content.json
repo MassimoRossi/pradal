@@ -1,6 +1,15 @@
 {
   "opere": [
     {
+      "id": 7,
+      "title": "Non voltarti",
+      "year": "2026",
+      "src": "assets/opere/non_voltarti.png",
+      "size": "43 cm x 63 cm x 8 cm",
+      "technique": "Mista",
+      "infoText": "Dedicata agli esuli istriani. Una mamma scappa dai bombardamenti insieme a 300.000 persone e ordina alla figlioletta di 6 anni di non voltarsi indietro."
+    },
+    {
       "id": 2,
       "title": "Money",
       "year": "2025",
