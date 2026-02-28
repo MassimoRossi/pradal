@@ -1,6 +1,6 @@
 // Mock Data Source - Attached to Global Namespace
 window.SP.Data = {
-    siteTitle: "VALERIO PRADAL",
+    siteTitle: "PRADAL",
 
     // ========================================
     // CONTATTI - Configurazione Email
